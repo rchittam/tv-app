@@ -1,0 +1,109 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #141414 0%, #000000 100%);
+    color: white;
+    padding: 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.landing-title {
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    background: linear-gradient(to right, #ffffff, #aaaaaa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.tiles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1600px;
+    perspective: 1000px;
+    /* For 3D feel */
+}
+
+.landing-tile {
+    width: 400px;
+    height: 225px;
+    background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 3px solid rgba(255, 255, 255, 0.05);
+    /* Thicker border for TV visibility */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* Critical for fixed sizes */
+}
+
+.landing-tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), transparent);
+    z-index: 1;
+}
+
+.landing-tile.focused {
+    transform: scale(1.08) translateZ(20px);
+    background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+    border-color: #e50914;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(229, 9, 20, 0.4);
+    z-index: 100;
+}
+
+.tile-icon {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    z-index: 2;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.tile-label {
+    font-size: 1.8rem;
+    font-weight: 600;
+    z-index: 2;
+    letter-spacing: 0.5px;
+}
+
+.landing-footer {
+    margin-top: 50px;
+}
+
+.logout-btn {
+    background: transparent;
+    border: 1px solid #666;
+    color: #999;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-btn.focused {
+    background: #333;
+    color: white;
+    border-color: white;
+}

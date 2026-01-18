@@ -1,0 +1,404 @@
+/* Profile Dropdown */
+select {
+  padding: 14px 12px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background-color: #222;
+  color: #fff;
+  font-size: 18px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 24px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #e50914;
+  box-shadow: 0 0 5px #e50914;
+}
+
+select.focused {
+  outline: none;
+  border-color: #e50914;
+  box-shadow: 0 0 8px #e50914;
+}
+
+select option {
+  background-color: #222;
+  color: #fff;
+  padding: 10px;
+}
+
+/* Login Container - centers everything */
+.login-container {
+  display: flex;
+  flex-direction: row;
+  /* Horizontal layout */
+  align-items: center;
+  justify-content: space-around;
+  /* Distribute panes */
+  min-height: 100vh;
+  padding: 0 5%;
+}
+
+.login-left-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.login-app-icon {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px rgba(229, 9, 20, 0.4));
+  /* Glow effect matching red theme */
+}
+
+.login-app-name {
+  font-size: 64px;
+  font-weight: bold;
+  color: #ffffff;
+  /* White color as requested */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  margin-bottom: 40px;
+  /* Added margin for space below name */
+}
+
+.login-right-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Profile Dropdown Container */
+.profile-selector {
+  width: 350px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #141414;
+  /* Netflix-style dark */
+  color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  width: 350px;
+  /* center horizontally & vertically */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Form field containers */
+form>div {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+/* FocusableItem wrapper - needs full width */
+form>div>div {
+  width: 100%;
+}
+
+/* Inputs */
+input {
+  padding: 14px 12px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background-color: #222;
+  color: #fff;
+  font-size: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #e50914;
+  /* Netflix red on focus */
+  box-shadow: 0 0 5px #e50914;
+}
+
+/* Spatial navigation focus (TV remote) */
+input.focused {
+  outline: none;
+  border-color: #e50914;
+  box-shadow: 0 0 8px #e50914;
+}
+
+button.focused {
+  background-color: #f6121d;
+  box-shadow: 0 0 10px #e50914;
+  transform: scale(1.02);
+}
+
+/* Button FocusableItem wrapper */
+form>div:last-of-type {
+  width: 100%;
+  margin-top: 10px;
+}
+
+button {
+  padding: 14px 12px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #f6121d;
+  /* slightly brighter red on hover */
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 12px 10px;
+  font-size: 16px;
+}
+
+/* Secondary Button (Save Profile) */
+.btn-secondary {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #444;
+}
+
+.btn-secondary.focused {
+  background-color: #555;
+  border-color: #e50914;
+  box-shadow: 0 0 8px #e50914;
+  transform: scale(1.02);
+}
+
+/* Danger Button (Delete Profile) */
+.btn-danger {
+  background-color: #8b0000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-danger:hover {
+  background-color: #a50000;
+}
+
+.btn-danger.focused {
+  background-color: #c00000;
+  box-shadow: 0 0 8px #ff4444;
+  transform: scale(1.02);
+}
+
+/* Optional: style placeholder text */
+input::placeholder {
+  color: #aaa;
+}
+
+/* Error Message */
+.error-message {
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
+  border: 1px solid #ff6b6b;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Success Message */
+.success-message {
+  color: #4ade80;
+  background-color: rgba(74, 222, 128, 0.1);
+  border: 1px solid #4ade80;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Custom Dropdown */
+.profile-selector {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.custom-select-trigger {
+  background: #222;
+  /* Match input background */
+  border: 1px solid #333;
+  /* Match input border */
+  border-radius: 4px;
+  padding: 14px 12px;
+  /* Match input padding exactly */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+  /* Match input font size */
+}
+
+.custom-select-trigger.focused {
+  background: #333;
+  border-color: #e50914;
+  outline: 2px solid #e50914;
+}
+
+.custom-options-list {
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 4px;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  max-height: 300px;
+  overflow-y: auto;
+  top: 110%;
+  /* Slight gap */
+  left: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure container has relative positioning for the absolute dropdown */
+.profile-selector {
+  position: relative;
+  width: 100%;
+}
+
+.custom-option {
+  padding: 12px 15px;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  background: #333;
+  color: #ddd;
+  transition: background 0.2s;
+}
+
+.custom-option:last-child {
+  border-bottom: none;
+}
+
+.custom-option.focused {
+  background: #444;
+  color: white;
+  border-left: 4px solid #e50914;
+  /* Keep the red indicator */
+}
+
+.custom-option.selected {
+  font-weight: bold;
+  color: white;
+  background: #222;
+  /* Slightly darker to differentiate from hover */
+}
+
+@media (min-width: 1920px) {
+
+  form,
+  .profile-selector {
+    width: 400px;
+    box-sizing: border-box;
+  }
+
+  form {
+    padding: 50px;
+    padding-top: 10px;
+    /* Reduce top padding since profile selector is above */
+  }
+
+  .profile-selector {
+    padding: 0 50px;
+    /* Match form horizontal padding/margin alignment context if needed, or simply align widths */
+    /* Actually form has padding 50px, which affects its content box? 
+       If form allows box-sizing border-box, width 400px includes padding.
+       Let's check form box-sizing first. Standard is content-box unless reset.
+       If form is 400px wide + 100px padding = 500px total.
+       .profile-selector should match.
+    */
+    box-sizing: border-box;
+    /* Safest */
+    margin: 0 auto;
+    /* Center it */
+  }
+
+  /* Wait, usually form width styling suggests creating a column. 
+     Let's just align them by giving them same width constraints. 
+  */
+
+  form {
+    width: 400px;
+    padding: 20px 50px 50px 50px;
+  }
+
+  .profile-selector {
+    width: 400px;
+    /* Content width matching form inputs */
+    margin-bottom: 0;
+  }
+
+  input {
+    font-size: 20px;
+    padding: 14px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 16px 0;
+  }
+}

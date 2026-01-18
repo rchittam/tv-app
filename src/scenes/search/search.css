@@ -1,0 +1,182 @@
+/* Search Scene Styles */
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #141414;
+    color: white;
+    overflow: hidden;
+}
+
+/* Search Input Area */
+.search-input-row {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    gap: 15px;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.search-icon {
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.search-input-wrapper {
+    flex: 1;
+    max-width: 600px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 2px solid #444;
+    background-color: #222;
+    color: white;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.search-input:focus,
+.search-input.focused {
+    border-color: #e50914;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+}
+
+.search-hint {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 20px;
+}
+
+/* Tab Row - Reuse from favorites.css */
+
+/* Search Results Content */
+.search-content {
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Movies Layout (75% / 25%) */
+.search-movies-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.search-grid-pane {
+    width: 75%;
+    height: 100%;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Series Layout (47% / 53%) */
+.search-series-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.search-series-grid-pane {
+    width: 47%;
+    height: 100%;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-right: 1px solid #333;
+}
+
+/* Reuse series card styles */
+.search-series-grid-pane .series-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-bottom: 50px;
+    justify-content: flex-start;
+}
+
+.search-series-grid-pane .series-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 140px;
+    height: 250px;
+    position: relative;
+}
+
+.search-series-grid-pane .series-card.focused {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.search-series-grid-pane .series-poster-container {
+    width: 140px;
+    height: 210px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 3px solid transparent;
+}
+
+.search-series-grid-pane .series-card.focused .series-poster-container {
+    border-color: #e50914;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.search-series-grid-pane .series-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.search-series-grid-pane .series-title {
+    font-size: 0.85rem;
+    color: #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+}
+
+.search-series-grid-pane .series-card.focused .series-title {
+    color: white;
+    white-space: normal;
+    font-weight: bold;
+}
+
+/* Empty State */
+.search-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.search-empty-state h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
+    color: #888;
+}
+
+.search-empty-state p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #666;
+}
