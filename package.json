@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "zip": "npm run build && powershell Compress-Archive -Path dist/* -DestinationPath build-dist.zip -Force"
   },
   "dependencies": {
     "@noriginmedia/norigin-spatial-navigation": "^2.3.0",
