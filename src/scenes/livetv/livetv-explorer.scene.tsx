@@ -75,7 +75,8 @@ function LiveTvExplorer(props: Props) {
             const { userName, password, url } = props.credentials;
             return apiService.getLiveCategories(userName, password, url);
         },
-        staleTime: 1000 * 60 * 10,
+        staleTime: Infinity,
+        gcTime: Infinity, // Prevent garbage collection until app exit
     });
 
     // Fetch channels for selected category

@@ -84,8 +84,15 @@ function MoviesExplorer(props: Props) {
     const queryClient = useQueryClient();
     const { data: categories, isLoading: isLoadingCategories } = useQuery<VodCategory[]>({
         queryKey: ['vodCategories'],
-        queryFn: () => queryClient.getQueryData(['vodCategories']) as VodCategory[] || [],
+        queryFn: async () => {
+            // First check cache, then fetch from API if empty
+            const cached = queryClient.getQueryData<VodCategory[]>(['vodCategories']);
+            if (cached && cached.length > 0) return cached;
+            const { userName, password, url } = props.credentials;
+            return apiService.getVodCategories(userName, password, url);
+        },
         staleTime: Infinity,
+        gcTime: Infinity, // Prevent garbage collection until app exit
     });
 
     const { data: movies, isLoading: isLoadingMovies, error: moviesError } = useQuery({
