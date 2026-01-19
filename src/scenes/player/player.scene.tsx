@@ -39,9 +39,18 @@ function PlayerScene({
 
     // Construct URL based on content type
     const baseUrl = apiService.normalizeUrl(credentials.url);
-    const streamUrl = contentType === 'live'
-        ? `${baseUrl}/live/${credentials.userName}/${credentials.password}/${streamId}.${streamExtension}`
-        : `${baseUrl}/movie/${credentials.userName}/${credentials.password}/${streamId}.${streamExtension}`;
+    const getStreamUrl = () => {
+        switch (contentType) {
+            case 'live':
+                return `${baseUrl}/live/${credentials.userName}/${credentials.password}/${streamId}.${streamExtension}`;
+            case 'series_episode':
+                return `${baseUrl}/series/${credentials.userName}/${credentials.password}/${streamId}.${streamExtension}`;
+            case 'movie':
+            default:
+                return `${baseUrl}/movie/${credentials.userName}/${credentials.password}/${streamId}.${streamExtension}`;
+        }
+    };
+    const streamUrl = getStreamUrl();
 
     // Handle initial seek for resume
     useEffect(() => {
